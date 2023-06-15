@@ -18,7 +18,7 @@ app.use(cors({
 
 mongoose.connect("mongodb+srv://BharathK:BharathK@cluster0.cjyjzid.mongodb.net/firstdb?retryWrites=true&w=majority")
     .then(()=>{
-        console.log("Mongodb connected successfully")
+        console.log("Mongodb connected successfully !!")
     })
     .catch((err)=>{
         console.log(err)
@@ -38,10 +38,11 @@ app.get("/jobs",async(req,res)=>{
 
 app.post("/store",async(req,res)=>{
      let {title,work,name,url,location,link,des,skills,userId}=req.body
+     console.log(req.body)
     const newData = new Content({
         title,work,name,url,location,link,des,skills,userId
       });
-     console.log(newData)
+     
      await newData.save()
      return res.json("job posted succesfully");
 })
