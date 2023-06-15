@@ -4,7 +4,7 @@ const bodyparser=require("body-parser")
 const { default: mongoose } = require("mongoose")
 const app=express()
 const auth = require('./routes/auth');
-const Content= require('./schema')
+const {Content}= require('./schema')
 const port= process.env.PORT|| 4000;
 app.use(bodyparser.urlencoded({
     extended:true
