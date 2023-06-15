@@ -51,8 +51,7 @@ router.post("/loginS", async (req, res) => {
         //confirm the user is register or not
         const userexist = await UserS.findOne({ username: username });
         if (!userexist) {
-            //return res.status(404).json('user not found');
-            return res.json("user not found")
+            return res.status(404).json('user not found');
         }
         bcrypt.compare(password, userexist.password).then((isCorrect) => {
             if (isCorrect) {
