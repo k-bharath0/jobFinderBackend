@@ -37,10 +37,11 @@ app.get("/jobs",async(req,res)=>{
 })
 
 app.post("/store",async(req,res)=>{
-     const {title,work,name,url,location,link,des,skills,userId}=req.body
+     let {title,work,name,url,location,link,des,skills,userId}=req.body
     const newData = new Content({
         title,work,name,url,location,link,des,skills,userId
       });
+     console.log(newData)
      await newData.save()
      return res.json("job posted succesfully");
 })
