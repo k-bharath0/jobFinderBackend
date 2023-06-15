@@ -1,10 +1,18 @@
-const mongoose = require("mongoose")
+const mongoose = require ("mongoose")
 
-const contentSchema={
-    username:String,
-    password:String
-}
+const contentSchema=new mongoose.Schema({
+    title:{type:String},
+    work:{type:String},
+    name:{type:String},
+    url:{type:String},
+    location:{type:String},
+    link:{type:String},
+    des:{type:String},
+    skills:{type:[]},
+    userId:{type:String}
+}, {
+    timestamps: true,})
 
-const Content = mongoose.model("project",contentSchema)
+const Content = mongoose.model("jobs",contentSchema)
 
 module.exports = Content
