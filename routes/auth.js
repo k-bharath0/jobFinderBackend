@@ -23,6 +23,7 @@ router.post("/registerS", async (req, res) => {
         await newUser.save();
         return res.json("user account created sucessfully");
     }
+    console.log("register")
 });
 //register route for job poster
 router.post("/registerP", async (req, res) => {
@@ -99,6 +100,7 @@ router.post("/loginS", async (req, res) => {
             else {
                 return res.status(405).json('password is incorrect');
             }
+            
         }
         );
     } catch (error) {
