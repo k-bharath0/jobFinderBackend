@@ -16,7 +16,7 @@ app.use(cors({
     origin: '*'
 }));
 
-mongoose.connect("mongodb+srv://BharathK:BharathK@cluster0.cjyjzid.mongodb.net/firstdb?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://BharathK:BharathK@cluster0.cjyjzid.mongodb.net/firstdb?retryWrites=true&w=majority&appName=Cluster0")
     .then(()=>{
         console.log("Mongodb connected successfully !!")
     })
